@@ -9,6 +9,7 @@ import {
   RefinementList,
   SearchBox,
 } from 'react-instantsearch';
+import { Toaster } from 'sonner';
 
 const client = algoliasearch(
   'SRC1ISDAM7',
@@ -20,6 +21,7 @@ export default function Search() {
       searchClient={client}
       indexName="prod_SCANNABLE"
     >
+      <Toaster position="top-right" />
       <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] min-h-screen gap-4 p-4">
         <div className="sticky top-0 h-screen overflow-auto z-20 p-2">
           <DynamicWidgets fallbackComponent={FallbackComponent} />

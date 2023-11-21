@@ -2,6 +2,8 @@ import { Hit as AlgoliaHit } from 'instantsearch.js';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Highlight } from 'react-instantsearch';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { toast } from 'sonner';
 
 type HitProps = {
   hit: AlgoliaHit<{
@@ -19,11 +21,6 @@ export default function SearchHit({ hit }: HitProps) {
   > | null>(null);
 
   const imageUrl = error ? fallbackImage : hit.image;
-  console.log({
-    error,
-    imageUrl,
-    hit,
-  });
 
   useEffect(() => {
     setError(null);
@@ -48,6 +45,19 @@ export default function SearchHit({ hit }: HitProps) {
           className="font-bold text-gray-800 block"
         />
         <span className="text-gray-600">Part Number: {hit.code}</span>{' '}
+        <br />
+        <CopyToClipboard
+          text={hit.code}
+          onCopy={() =>
+            toast.message('Copied code', {
+              description: `Copied ${hit.code} - ${hit.name} to clipboard`,
+            })
+          }
+        >
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1">
+            Copy Part Number
+          </button>
+        </CopyToClipboard>
         <br />
       </div>
     </div>

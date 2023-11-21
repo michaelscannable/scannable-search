@@ -13,15 +13,18 @@
     "instantsearch.css": "8.1.0",
     "next": "14.0.3",
     "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
     "react-instantsearch": "^7.3.0",
     "react-instantsearch-hooks-server": "6.38.1",
     "react-instantsearch-hooks-web": "6.38.1",
-    "react-instantsearch-nextjs": "^0.1.4"
+    "react-instantsearch-nextjs": "^0.1.4",
+    "sonner": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
