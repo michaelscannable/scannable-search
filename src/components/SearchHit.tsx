@@ -30,20 +30,25 @@ export default function SearchHit({ hit }: HitProps) {
   }, [hit]);
 
   return (
-    <div className="hit">
+    <div className="flex items-center p-2.5 mb-2.5 rounded">
       <Image
         src={imageUrl || fallbackImage}
         width={100}
-        height="100"
+        height={100}
         alt={hit.name}
-        className="hit-image"
+        className="w-25 h-25 object-cover mr-2.5 rounded"
         onError={setError}
       />
 
-      <div className="hit-details">
+      <div className="flex-grow">
         <Highlight attribute="manufacturer" hit={hit} />
-        <Highlight hit={hit} attribute="name" className="hit-label" />
-        <span className="hit-code">{hit.code}</span> <br />
+        <Highlight
+          hit={hit}
+          attribute="name"
+          className="font-bold text-gray-800 block"
+        />
+        <span className="text-gray-600">Part Number: {hit.code}</span>{' '}
+        <br />
       </div>
     </div>
   );

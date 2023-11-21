@@ -42,12 +42,12 @@ body {
   box-sizing: border-box;
 }
 
-.Container {
+/* .Container {
   display: grid;
   align-items: flex-start;
   grid-template-columns: minmax(min-content, 200px) 1fr;
   gap: 0.5rem;
-}
+} */
 
 .hit {
   display: flex;
@@ -77,13 +77,4 @@ body {
 
 .hit-code {
   color: #666;
-}
-
-.copy-button {
-  background-color: #f0f0f0;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  margin-left: 10px;
-  border-radius: 4px;
 }

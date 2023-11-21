@@ -14,20 +14,26 @@ const client = algoliasearch(
   'SRC1ISDAM7',
   '965b940b45f3174953c4549e2b45f02d'
 );
-
 export default function Search() {
   return (
     <InstantSearchNext
       searchClient={client}
       indexName="prod_SCANNABLE"
     >
-      <div className="Container">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] min-h-screen gap-4 p-4">
+        <div className="sticky top-0 h-screen overflow-auto z-20 p-2">
           <DynamicWidgets fallbackComponent={FallbackComponent} />
         </div>
-        <div>
-          <SearchBox />
-          <Hits hitComponent={SearchHit} />
+
+        <div className="space-y-4">
+          <div className="sticky top-0 z-30 bg-white shadow">
+            <SearchBox />
+          </div>
+
+          {/* Hits list: Add some padding for visual comfort */}
+          <div>
+            <Hits hitComponent={SearchHit} />
+          </div>
         </div>
       </div>
     </InstantSearchNext>
